@@ -15,4 +15,22 @@ a{
 
 a:hover{
     text-decoration:underline;
+
+    nav {
+    background-color: #1565c0;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
 }
