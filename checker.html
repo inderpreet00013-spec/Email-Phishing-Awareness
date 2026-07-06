@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="warning-signs.html">Warning Signs</a> |
+    <a href="examples.html">Example Email</a> |
+    <a href="quiz.html">Quiz</a> |
+    <a href="safety.html">Safety Tips</a> |
+    <a href="checker.html">Email Checker</a>
+</nav>
+
+<hr>
+
+<h1>Email Awareness Checker</h1>
+
+<p>Paste an email message below. This tool checks for common phishing warning signs.</p>
+
+<textarea id="email" rows="10" cols="60" placeholder="Paste email text here..."></textarea>
+
+<br><br>
+
+<button onclick="checkEmail()">Check Email</button>
+
+<h2 id="result"></h2>
+
+<script>
+function checkEmail() {
+
+let text = document.getElementById("email").value.toLowerCase();
+
+let score = 0;
+
+if(text.includes("urgent")) score++;
+if(text.includes("verify")) score++;
+if(text.includes("password")) score++;
+if(text.includes("click")) score++;
+if(text.includes("account")) score++;
+
+if(score >= 3){
+document.getElementById("result").innerHTML="⚠️ Warning: This email contains several common phishing indicators. Verify it before taking any action.";
+}
+else{
+document.getElementById("result").innerHTML="✅ No obvious phishing keywords detected. Continue to verify the sender and links before trusting the email.";
+}
+
+}
+</script>
+
+</body>
+</html>
